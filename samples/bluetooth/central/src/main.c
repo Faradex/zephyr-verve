@@ -18,6 +18,9 @@
 #include <zephyr/bluetooth/uuid.h>
 #include <zephyr/bluetooth/gatt.h>
 #include <zephyr/sys/byteorder.h>
+#include <zephyr/logging/log.h>
+
+LOG_MODULE_REGISTER(bt_central_sample);
 
 static void start_scan(void);
 
@@ -43,9 +46,9 @@ static void device_found(const bt_addr_le_t *addr, int8_t rssi, uint8_t type,
 	printk("Device found: %s (RSSI %d)\n", addr_str, rssi);
 
 	/* connect only to devices in close proximity */
-	if (rssi < -50) {
-		return;
-	}
+	// if (rssi < -50) {
+	// 	return;
+	// }
 
 	if (bt_le_scan_stop()) {
 		return;
@@ -127,11 +130,13 @@ int main(void)
 
 	err = bt_enable(NULL);
 	if (err) {
-		printk("Bluetooth init failed (err %d)\n", err);
+		LOG_INF("Bluetooth init failed (err %d)\n", err);
 		return 0;
 	}
 
-	printk("Bluetooth initialized\n");
+	k_msleep(100);
+
+	LOG_INF("Bluetooth initialized\n");
 
 	start_scan();
 	return 0;

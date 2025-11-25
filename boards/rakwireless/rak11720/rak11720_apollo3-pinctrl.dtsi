@@ -37,7 +37,7 @@
 			pinmux = <M2SCL_P27>, <M2SDAWIR3_P25>;
 			drive-open-drain;
 			drive-strength = "0.5";
-			bias-pull-up;
+			// bias-pull-up;
 		};
 	};
 	i2c3_default: i2c3_default {

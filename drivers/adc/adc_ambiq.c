@@ -418,6 +418,8 @@ static void adc_context_start_sampling(struct adc_context *ctx)
 	}
 	/*Trigger the ADC*/
 	am_hal_adc_sw_trigger(data->adcHandle);
+
+	k_busy_wait(1000);
 }
 
 static int adc_ambiq_init(const struct device *dev)

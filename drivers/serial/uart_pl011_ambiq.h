@@ -85,6 +85,8 @@ static int uart_ambiq_pm_action(const struct device *dev, enum pm_device_action 
 {
 	int key;
 
+	const struct pl011_config *config = dev->config;
+
 	/*Uart module number*/
 	uint32_t ui32Module = ((uint32_t)get_uart(dev) == UART0_BASE) ? 0 : 1;
 
@@ -113,6 +115,8 @@ static int uart_ambiq_pm_action(const struct device *dev, enum pm_device_action 
 
 		/* Enable power control.*/
 		am_hal_pwrctrl_periph_enable(eUARTPowerModule);
+
+		pinctrl_apply_state(config->pincfg, PINCTRL_STATE_DEFAULT);
 
 		/* Restore UART registers*/
 		key = irq_lock();
@@ -160,6 +164,8 @@ static int uart_ambiq_pm_action(const struct device *dev, enum pm_device_action 
 		 * to set the entire CR register to 0.
 		 */
 		UARTn(ui32Module)->CR = 0;
+
+		pinctrl_apply_state(config->pincfg, PINCTRL_STATE_SLEEP);
 
 		/* Disable power control.*/
 		am_hal_pwrctrl_periph_disable(eUARTPowerModule);

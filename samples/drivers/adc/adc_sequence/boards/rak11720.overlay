@@ -1,0 +1,35 @@
+/ {
+    aliases {
+        /* Crea un alias "adc0" che punta al nodo &adc0 */
+        adc0 = &adc0;
+    };
+};
+
+/* Assicurati che adc0 sia anche abilitato */
+&adc0 {
+    status = "okay";
+
+    /* * NOTA: Questo esempio (adc_sequence) si aspetta che
+     * i canali siano definiti come sotto-nodi.
+     * Se non l'hai già fatto, devi aggiungerli qui.
+     */
+    // #address-cells = <1>;
+    // #size-cells = <0>;
+
+    // /* Esempio per il canale 8 */
+    // channel@8 {
+    //     reg = <8>;
+    //     zephyr,gain = "ADC_GAIN_1";
+    //     zephyr,reference = "ADC_REF_INTERNAL";
+    //     zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+    //     zephyr,resolution = <14>;
+    // };
+
+    /* Aggiungi altri canali se necessario */
+    /*
+    channel@9 {
+        reg = <9>;
+        ...
+    };
+    */
+};

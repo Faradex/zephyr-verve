@@ -66,6 +66,7 @@ child-binding:
           - bias-high-impedance
           - bias-pull-up
           - bias-pull-down
+          - low-power-enable
 
     properties:
       pinmux:

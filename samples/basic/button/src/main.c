@@ -16,7 +16,7 @@
 #include <zephyr/sys/printk.h>
 #include <inttypes.h>
 
-#define SLEEP_TIME_MS	1
+#define SLEEP_TIME_MS	10000
 
 /*
  * Get button configuration from the devicetree sw0 alias. This is mandatory.
@@ -96,7 +96,7 @@ int main(void)
 			if (val >= 0) {
 				gpio_pin_set_dt(&led, val);
 			}
-			k_msleep(SLEEP_TIME_MS);
+			k_sleep(K_FOREVER);
 		}
 	}
 	return 0;

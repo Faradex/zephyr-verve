@@ -296,6 +296,15 @@ void SX126xSetOperatingMode(RadioOperatingModes_t mode)
 		break;
 
 	case MODE_SLEEP:
+#if HAVE_GPIO_ANTENNA_ENABLE
+		gpio_pin_configure_dt(&dev_config.antenna_enable, GPIO_DISCONNECTED);
+#endif
+#if HAVE_GPIO_TX_ENABLE
+		gpio_pin_configure_dt(&dev_config.tx_enable, GPIO_DISCONNECTED);
+#endif
+#if HAVE_GPIO_RX_ENABLE
+		gpio_pin_configure_dt(&dev_config.rx_enable, GPIO_DISCONNECTED);
+#endif
 		/* Additionally disable the DIO1 interrupt to save power */
 		sx126x_dio1_irq_disable(&dev_data);
 		__fallthrough;
@@ -372,6 +381,16 @@ void SX126xWaitOnBusy(void)
 void SX126xWakeup(void)
 {
 	int ret;
+
+#if HAVE_GPIO_ANTENNA_ENABLE
+	gpio_pin_configure_dt(&dev_config.antenna_enable, GPIO_OUTPUT_INACTIVE);
+#endif
+#if HAVE_GPIO_TX_ENABLE
+	gpio_pin_configure_dt(&dev_config.tx_enable, GPIO_OUTPUT_INACTIVE);
+#endif
+#if HAVE_GPIO_RX_ENABLE
+	gpio_pin_configure_dt(&dev_config.rx_enable, GPIO_OUTPUT_INACTIVE);
+#endif
 
 	/* Reenable DIO1 when waking up */
 	sx126x_dio1_irq_enable(&dev_data);

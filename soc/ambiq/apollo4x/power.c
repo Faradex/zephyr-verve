@@ -32,7 +32,9 @@ void pm_state_set(enum pm_state state, uint8_t substate_id)
 		/* Cache: power down*/
 		/* Flash: power down*/
 		/* Sram: retention*/
+		printf("Going to sleep\n");
 		am_hal_sysctrl_sleep(AM_HAL_SYSCTRL_SLEEP_DEEP);
+		printf("Woke from deepsleep\n");
 		break;
 	default:
 		LOG_DBG("Unsupported power state %u", state);

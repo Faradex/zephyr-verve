@@ -34,25 +34,25 @@
 
 #include "uart_pl011_registers.h"
 
-struct pl011_config {
-	DEVICE_MMIO_ROM;
-#if defined(CONFIG_PINCTRL)
-	const struct pinctrl_dev_config *pincfg;
-#endif
-#if defined(CONFIG_RESET)
-	const struct reset_dt_spec reset;
-#endif
-#if defined(CONFIG_CLOCK_CONTROL)
-	const struct device *clock_dev;
-	clock_control_subsys_t clock_id;
-#endif
-#ifdef CONFIG_UART_INTERRUPT_DRIVEN
-	uart_irq_config_func_t irq_config_func;
-#endif
-	bool fifo_disable;
-	int (*clk_enable_func)(const struct device *dev, uint32_t clk);
-	int (*pwr_on_func)(const struct device *dev);
-};
+// struct pl011_config {
+// 	DEVICE_MMIO_ROM;
+// #if defined(CONFIG_PINCTRL)
+// 	const struct pinctrl_dev_config *pincfg;
+// #endif
+// #if defined(CONFIG_RESET)
+// 	const struct reset_dt_spec reset;
+// #endif
+// #if defined(CONFIG_CLOCK_CONTROL)
+// 	const struct device *clock_dev;
+// 	clock_control_subsys_t clock_id;
+// #endif
+// #ifdef CONFIG_UART_INTERRUPT_DRIVEN
+// 	uart_irq_config_func_t irq_config_func;
+// #endif
+// 	bool fifo_disable;
+// 	int (*clk_enable_func)(const struct device *dev, uint32_t clk);
+// 	int (*pwr_on_func)(const struct device *dev);
+// };
 
 /* Device data structure */
 struct pl011_data {

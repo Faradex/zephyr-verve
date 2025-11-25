@@ -41,6 +41,8 @@ struct apollo3_pinctrl_soc_pin {
 	uint32_t iom_num: 3;
 	/** nCE module polarity */
 	uint32_t nce_pol: 1;
+	/** Set the pin for low power mode */
+	uint32_t low_power_enable: 1;
 };
 
 typedef struct apollo3_pinctrl_soc_pin pinctrl_soc_pin_t;
@@ -68,6 +70,7 @@ typedef struct apollo3_pinctrl_soc_pin pinctrl_soc_pin_t;
 		DT_PROP(node_id, ambiq_iom_mspi),                                                  \
 		DT_PROP(node_id, ambiq_iom_num),                                                   \
 		DT_PROP(node_id, ambiq_nce_pol),                                                   \
+		DT_PROP(node_id, low_power_enable), 												\
 	},
 
 /**

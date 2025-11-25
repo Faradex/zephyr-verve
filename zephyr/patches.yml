@@ -1,0 +1,46 @@
+patches:
+  # - path: zephyr/0001-Fixing-STM32-I2C-problem.patch
+  #   sha256sum: 7c467b05aa766ed1648de612588ec1179b3db1762bba463094675e8979bae619
+  #   module: zephyr
+  #   author: Sercan ERAT
+  #   email: sercanerat@gmail.com
+  #   date: 2025-08-23
+  #   upstreamable: false
+  #   comments: |
+  #     Fixing Rak3172 i2c not working correctly with PM problem.
+  # - path: zephyr/0002-Fixing-lora-sleep-problem.patch
+  #   sha256sum: 311083dfddf2654d7f5e017b15182a46b3d581b8b6514c10b2466fe61ab7857e
+  #   module: zephyr
+  #   author: Sercan ERAT
+  #   email: sercanerat@gmail.com
+  #   date: 2024-12-13
+  #   upstreamable: false
+  #   comments: |
+  #     Fixing LoRa sleep problem.
+  # - path: zephyr/0003-Adding-RTT-support-for-apollo3.patch
+  #   sha256sum: 269ef368ac6236a1c42e184a1e695a5a5f85dd0e0246aef78bef3221971a7364
+  #   module: zephyr
+  #   author: Sercan ERAT
+  #   email: sercanerat@gmail.com
+  #   date: 2024-12-13
+  #   upstreamable: false
+  #   comments: |
+  #     Adding RTT support for RAK11720.
+  # - path: zephyr/0004-Fixing-apollo3-adc-problem.patch
+  #   sha256sum: f263a69ca438fb63c6f371ac2c733e4d4538eecd4b17f0064414d90d849bc847
+  #   module: zephyr
+  #   author: Sercan ERAT
+  #   email: sercanerat@gmail.com
+  #   date: 2025-08-23
+  #   upstreamable: false
+  #   comments: |
+  #     Fixing Apollo3 Blue ADC problem.
+  - path: zephyr/0005-Fixing-Apollo3-UART-sleep-problem.patch
+    sha256sum: 534af0e43ac489264029634d7be0bfe662f3e1063035bb0dc5ea4de9e5b6f26a
+    module: zephyr
+    author: Sercan ERAT
+    email: sercanerat@gmail.com
+    date: 2025-08-23
+    upstreamable: false
+    comments: |
+      Fixing Apollo3 Blue UART sleep problem.

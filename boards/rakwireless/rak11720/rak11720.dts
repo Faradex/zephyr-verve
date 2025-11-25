@@ -197,4 +197,5 @@
 
 &gpio32_63 {
 	status = "okay";
+	wakeup-source;
 };

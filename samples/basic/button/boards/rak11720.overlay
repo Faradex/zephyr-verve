@@ -1,0 +1,16 @@
+/ {
+	aliases {
+		sw0 = &trigger_pin;
+	};
+
+    pins {
+		compatible = "gpio-keys";
+		status = "okay";
+
+		trigger_pin: trigger_pin {
+			gpios = <&gpio32_63 6 (GPIO_ACTIVE_HIGH)>;
+			//wakeup-source; 
+			label = "LIS3DH Interrupt 1";
+		};
+	};
+};

@@ -152,7 +152,7 @@ int lorawan_nvm_data_restore(void)
 		LOG_ERR("Could not get NVM context");
 		return -EINVAL;
 	}
-
+	
 	err = settings_load_subtree_direct(LORAWAN_SETTINGS_BASE,
 					   on_setting_loaded,
 					   mib_req.Param.Contexts);
