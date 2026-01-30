@@ -140,11 +140,12 @@
 			reset-gpios = <&gpio0_31 17 GPIO_ACTIVE_LOW>;
 			busy-gpios = <&gpio0_31 16 GPIO_ACTIVE_HIGH>;
 			dio1-gpios = <&gpio0_31 15 GPIO_ACTIVE_HIGH>;
-			antenna-enable-gpios = <&gpio0_31 18 GPIO_ACTIVE_LOW>;
+			antenna-enable-gpios = <&gpio0_31 18 GPIO_ACTIVE_HIGH>;
 			dio2-tx-enable;
 			dio3-tcxo-voltage = <SX126X_DIO3_TCXO_3V3>;
 			tcxo-power-startup-delay-ms = <5>;
 			spi-max-frequency = <DT_FREQ_M(1)>;
+			rx-boosted;
 		};
 	};
 };
